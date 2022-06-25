@@ -31,3 +31,5 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+
+XDG_DATA_DIRS="/var/lib/exports/share:/home/guilherme/.local/share/flatpack/exports/share:$XDG_DATA_DIRS"
