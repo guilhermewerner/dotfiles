@@ -14,7 +14,6 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
 sudo apt-add-repository https://cli.github.com/packages
 
 # Dependencies
-
 sudo apt install -y --no-install-recommends \
     bash \
     ca-certificates \
@@ -24,21 +23,20 @@ sudo apt install -y --no-install-recommends \
     ffmpeg \
     g++ \
     gcc \
-    neofetch \
     gh \
     git \
     gnupg \
     gzip \
+    gzip \
     libc6-dev \
-    libgtk-3-dev \
     libssl-dev \
     libudev-dev \
-    libwebkit2gtk-4.0-dev \
     llvm \
     make \
+    mono-complete \
     nano \
+    neofetch \
     ninja-build \
-    pkg-config \
     python3 \
     tar \
     unzip \
