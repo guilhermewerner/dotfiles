@@ -1,0 +1,9 @@
+add_newline = false
+format = "$username$directory$git_branch$cmd_duration$character"
+
+[username]
+show_always = true
+style_user = "fg:yellow"
+
+[directory]
+style = "fg:cyan"
