@@ -1,9 +1,5 @@
 #!/usr/bin/env sh
 
-# Configuration
-
-cp ./Config/.gitconfig ~/.gitconfig
-
 # Update
 
 sudo apt update && sudo apt upgrade -y
