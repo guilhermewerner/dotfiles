@@ -1,35 +1,46 @@
-export ZSH="$HOME/.oh-my-zsh"
+# Set up the prompt
 
-ZSH_THEME="spaceship"
+#autoload -Uz promptinit
+#promptinit
+#prompt adam1
 
-DISABLE_UNTRACKED_FILES_DIRTY="true"
+setopt histignorealldups sharehistory
 
-SPACESHIP_PROMPT_ORDER=(
-    user
-    dir
-    host
-    git
-    exec_time
-    line_sep
-    jobs
-    exit_code
-    char
-)
+# Use emacs keybindings even if our EDITOR is set to vi
+bindkey -e
 
-SPACESHIP_USER_SHOW=always
-SPACESHIP_PROMPT_ADD_NEWLINE=false
-SPACESHIP_PROMPT_SEPARATE_LINE=false
+# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
+HISTSIZE=1000
+SAVEHIST=1000
+HISTFILE=~/.zsh_history
 
-DISABLE_AUTO_TITLE="true"
+. $HOME/.asdf/asdf.sh
 
-DISABLE_UNTRACKED_FILES_DIRTY="true"
+# append completions to fpath
+fpath=(${ASDF_DIR}/completions $fpath)
 
-plugins=(
-    asdf
-    git
-    zsh-autosuggestions
-)
+# Use modern completion system
+autoload -Uz compinit
+compinit
 
-source $ZSH/oh-my-zsh.sh
+zstyle ':completion:*' auto-description 'specify: %d'
+zstyle ':completion:*' completer _expand _complete _correct _approximate
+zstyle ':completion:*' format 'Completing %d'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' menu select=2
+eval "$(dircolors -b)"
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
+zstyle ':completion:*' menu select=long
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle ':completion:*' use-compctl false
+zstyle ':completion:*' verbose true
 
-XDG_DATA_DIRS="/var/lib/exports/share:/home/guilherme/.local/share/flatpack/exports/share:$XDG_DATA_DIRS"
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
+zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+eval "$(starship init zsh)"
