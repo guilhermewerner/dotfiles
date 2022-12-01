@@ -126,7 +126,7 @@ cp ./Config/starship.toml ~/.config/starship.toml
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 curl -sS https://starship.rs/install.sh | sh
-sudo chsh -s $(which zsh)
+chsh -s $(which zsh)
 
 # Reboot
 
