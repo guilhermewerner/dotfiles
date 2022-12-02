@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+DEBIAN_FRONTEND=noninteractive
+
 # Update
 
 sudo apt update && sudo apt upgrade -y
@@ -23,6 +25,7 @@ sudo apt install -y --no-install-recommends \
     gnupg \
     gzip \
     gzip \
+    htop \
     iputils-ping \
     libc6-dev \
     libluajit-5.1-dev \
@@ -40,6 +43,7 @@ sudo apt install -y --no-install-recommends \
     python3 \
     samba \
     tar \
+    ufw \
     unzip \
     wget \
     xz-utils \
@@ -168,11 +172,12 @@ sudo ufw allow "Samba"
 
 # Shell
 
+mkdir ~/.config
 cp ./Config/starship.toml ~/.config/starship.toml
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 curl -sS https://starship.rs/install.sh | sh
-sudo chsh -s $(which zsh)
+chsh -s $(which zsh)
 
 # Reboot
 
