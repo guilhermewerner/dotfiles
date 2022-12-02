@@ -21,6 +21,7 @@ sudo apt install -y --no-install-recommends \
     gnupg \
     gzip \
     gzip \
+    htop \
     libc6-dev \
     libssl-dev \
     libudev-dev \
