@@ -65,7 +65,7 @@ rustup +nightly component add rust-src
 
 git clone https://github.com/asdf-vm/asdf ~/.asdf
 
-cargo install \
+cargo install --force \
     bandwhich \
     bat \
     cbindgen \
