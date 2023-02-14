@@ -1,13 +1,13 @@
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
 [user]
-	name = Werner
-	email = guilhermeqwerner@gmail.com
+    name = Werner
+    email = guilhermeqwerner@gmail.com
 [core]
-	longpaths = true
-	fileMode = false
+    longpaths = true
+    fileMode = false
 [init]
-	defaultBranch = "main"
+    defaultBranch = "main"
