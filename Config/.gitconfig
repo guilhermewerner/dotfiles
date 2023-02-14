@@ -5,7 +5,7 @@
     required = true
 [user]
     name = Werner
-    email = guilhermeqwerner@gmail.com
+    email = guilherme.werner@tribufu.com
 [core]
     longpaths = true
     fileMode = false
