@@ -71,8 +71,6 @@ chsh -s $(which zsh)
 
 # Firewall
 
-sudo ufw allow 5000
-sudo ufw allow 7000
 sudo ufw allow 8000
 sudo ufw allow 9443
 
