@@ -20,8 +20,10 @@ sudo apt install -y --no-install-recommends \
     lsb-release \
     nano \
     neofetch \
+    net-tools \
     nginx \
     python3 \
+    qemu-guest-agent \
     samba \
     tar \
     ufw \
