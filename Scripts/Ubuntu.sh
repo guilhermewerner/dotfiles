@@ -9,11 +9,9 @@ sudo DEBIAN_FRONTEND=noninteractive apt update && sudo DEBIAN_FRONTEND=nonintera
 # Dependencies
 
 sudo DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends \
-    bash \
     ca-certificates \
     curl \
     git \
-    gnupg \
     gzip \
     htop \
     iputils-ping \
@@ -21,7 +19,6 @@ sudo DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends \
     nano \
     neofetch \
     net-tools \
-    python3 \
     qemu-guest-agent \
     tar \
     ufw \
