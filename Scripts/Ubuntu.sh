@@ -21,11 +21,5 @@ sudo DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends \
     net-tools \
     qemu-guest-agent \
     tar \
-    ufw \
     unzip \
     wget
-
-# Firewall
-
-sudo ufw allow "OpenSSH"
-sudo ufw enable
