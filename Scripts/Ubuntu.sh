@@ -9,44 +9,45 @@ sudo apt update && sudo apt upgrade -y
 # Dependencies
 
 sudo apt install -y --no-install-recommends \
-    autoconf \
-    automake \
     bash \
     ca-certificates \
-    clang \
-    cmake \
     curl \
-    ffmpeg \
     file \
-    g++ \
-    gcc \
     gh \
     git \
     gnupg \
     gzip \
     htop \
     iputils-ping \
-    libc6-dev \
-    libluajit-5.1-dev \
-    libncurses5-dev \
-    libssl-dev \
-    libudev-dev \
-    llvm \
     lsb-release \
-    make \
-    mono-complete \
     nano \
     neofetch \
-    nginx \
-    ninja-build \
     python3 \
     samba \
     tar \
     unzip \
     wget \
     xz-utils \
-    youtube-dl \
     zsh
+
+sudo apt install -y --no-install-recommends \
+    autoconf \
+    automake \
+    clang \
+    cmake \
+    ffmpeg \
+    g++ \
+    gcc \
+    libc6-dev \
+    libluajit-5.1-dev \
+    libncurses5-dev \
+    libssl-dev \
+    libudev-dev \
+    llvm \
+    make \
+    mono-complete \
+    ninja-build \
+    youtube-dl
 
 # PowerShell
 
