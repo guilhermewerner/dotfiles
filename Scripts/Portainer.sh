@@ -1,15 +1,14 @@
 #!/usr/bin/env sh
 
-sudo ufw allow 8000
-sudo ufw allow 9443
-sudo ufw reload
+export DEBIAN_FRONTEND=noninteractive
 
-docker volume create PortainerData
-docker run -d \
-    --name "Portainer" \
-    --restart always \
-    -p 8000:8000 \
-    -p 9443:9443 \
-    -v /var/run/docker.sock:/var/run/docker.sock \
-    -v PortainerData:/data \
-    portainer/portainer-ce:latest
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt update
+sudo apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+sudo usermod -aG docker $USER
+newgrp docker
+docker version
