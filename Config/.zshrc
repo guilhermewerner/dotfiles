@@ -14,7 +14,10 @@ HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
-. $HOME/.asdf/asdf.sh
+if [ "$(uname)" != "Darwin" ]
+then
+    . $HOME/.asdf/asdf.sh
+fi
 
 # append completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
@@ -28,7 +31,12 @@ zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' menu select=2
-eval "$(dircolors -b)"
+
+if [ "$(uname)" != "Darwin" ]
+then
+    eval "$(dircolors -b)"
+fi
+
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
