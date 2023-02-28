@@ -1,8 +1,10 @@
 #!/usr/bin/env sh
 
-export DEBIAN_FRONTEND=noninteractive
+touch ~/.hushlogin
 
 # Update
+
+export DEBIAN_FRONTEND=noninteractive
 
 sudo apt update && sudo apt upgrade -y
 
