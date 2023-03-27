@@ -17,6 +17,12 @@ asdf plugin add python https://github.com/danhper/asdf-python
 asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby
 asdf plugin add scala https://github.com/asdf-community/asdf-scala
 
+
+# NodeJS
+
+asdf install nodejs 18.15.0
+asdf global nodejs 18.15.0
+
 # .NET
 
 asdf install dotnet 7.0.100
