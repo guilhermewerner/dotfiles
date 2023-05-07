@@ -6,11 +6,11 @@ touch ~/.hushlogin
 
 export DEBIAN_FRONTEND=noninteractive
 
-sudo apt update && sudo apt upgrade -y
+sudo DEBIAN_FRONTEND=noninteractive apt update && sudo apt upgrade -y
 
 # Dependencies
 
-sudo apt install -y --no-install-recommends \
+sudo DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends \
     bash \
     ca-certificates \
     curl \
@@ -32,7 +32,7 @@ sudo apt install -y --no-install-recommends \
     xz-utils \
     zsh
 
-sudo apt install -y --no-install-recommends \
+sudo DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends \
     autoconf \
     automake \
     clang \
@@ -90,8 +90,8 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o 
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt update
-sudo apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+sudo DEBIAN_FRONTEND=noninteractive apt update
+sudo DEBIAN_FRONTEND=noninteractive apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 sudo usermod -aG docker $USER
 newgrp docker
 docker version
