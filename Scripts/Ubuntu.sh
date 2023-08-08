@@ -2,6 +2,11 @@
 
 touch ~/.hushlogin
 
+# Create User
+
+sudo adduser guilherme
+sudo usermod -aG sudo guilherme
+
 # Update
 
 export DEBIAN_FRONTEND=noninteractive
