@@ -4,8 +4,8 @@
     process = git-lfs filter-process
     required = true
 [user]
-    name = Werner
-    email = guilherme.werner@tribufu.com
+    name = Guilherme Werner
+    email = guilhermewerner@tribufu.com
 [core]
     longpaths = true
     fileMode = false
