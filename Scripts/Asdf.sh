@@ -19,8 +19,8 @@ asdf plugin add scala https://github.com/asdf-community/asdf-scala
 
 # NodeJS
 
-asdf install nodejs 18.15.0
-asdf global nodejs 18.15.0
+asdf install nodejs 20.11.1
+asdf global nodejs 20.11.1
 
 # .NET
 
