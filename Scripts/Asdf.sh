@@ -17,6 +17,11 @@ asdf plugin add python https://github.com/danhper/asdf-python
 asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby
 asdf plugin add scala https://github.com/asdf-community/asdf-scala
 
+# Go
+
+asdf install golang 1.22.1
+asdf global golang 1.22.1
+
 # NodeJS
 
 asdf install nodejs 20.11.1
@@ -29,8 +34,8 @@ asdf global dotnet 7.0.100
 
 # Java
 
-asdf install java temurin-19.0.1+10
-asdf global java temurin-19.0.1+10
+asdf install java temurin-21.0.2+13.0.LTS
+asdf global java temurin-21.0.2+13.0.LTS
 
 # Erlang
 
