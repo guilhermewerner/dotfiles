@@ -60,6 +60,28 @@ sudo DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends \
 
 sudo snap install powershell --classic
 
+# Git
+
+cp ./Config/.gitconfig ~/.gitconfig
+
+# SSH
+
+mkdir ~/.ssh
+cp ./Config/.ssh/config ~/.ssh/config
+
+# ZSH
+
+cp ./Config/.zshrc ~/.zshrc
+
+# Shell
+
+mkdir ~/.config
+cp ./Config/starship.toml ~/.config/starship.toml
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+curl -sS https://starship.rs/install.sh | sh
+chsh -s $(which zsh)
+
 # Rust
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -100,25 +122,3 @@ sudo DEBIAN_FRONTEND=noninteractive apt install docker-ce docker-ce-cli containe
 sudo usermod -aG docker $USER
 newgrp docker
 docker version
-
-# Git
-
-cp ./Config/.gitconfig ~/.gitconfig
-
-# SSH
-
-mkdir ~/.ssh
-cp ./Config/.ssh/config ~/.ssh/config
-
-# ZSH
-
-cp ./Config/.zshrc ~/.zshrc
-
-# Shell
-
-mkdir ~/.config
-cp ./Config/starship.toml ~/.config/starship.toml
-git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-curl -sS https://starship.rs/install.sh | sh
-chsh -s $(which zsh)
