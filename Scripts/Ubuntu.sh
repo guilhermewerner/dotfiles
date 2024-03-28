@@ -78,9 +78,9 @@ cp ./Config/.zshrc ~/.zshrc
 mkdir ~/.config
 cp ./Config/starship.toml ~/.config/starship.toml
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-curl -sS https://starship.rs/install.sh | sh
 chsh -s $(which zsh)
+curl -sS https://starship.rs/install.sh | sh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Rust
 
