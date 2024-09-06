@@ -39,10 +39,10 @@ asdf global java temurin-21.0.2+13.0.LTS
 
 # Erlang
 
-asdf install erlang 25.1.2
-asdf global erlang 25.1.2
+asdf install erlang 27.0.1
+asdf global erlang 27.0.1
 
 # Elixir
 
-asdf install elixir 1.14.2-otp-25
-asdf global elixir 1.14.2-otp-25
+asdf install elixir 1.17.2-otp-27
+asdf global elixir 1.17.2-otp-27
