@@ -30,12 +30,12 @@ install_shared() {
     sudo usermod -aG wireshark $USER
     newgrp wireshark
 
-    cp ./shared/* ~
-    cp ./linux/* ~
+    cp -r ./shared/.??* ~
+    cp -r ./linux/.??* ~
 
     git clone https://github.com/asdf-vm/asdf ~/.asdf
     git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-    chsh -s $(which zsh)
+    chsh -s /bin/zsh
     curl -sS https://starship.rs/install.sh | sh
     source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
@@ -47,17 +47,22 @@ install_shared() {
     asdf plugin add dotnet https://github.com/hensou/asdf-dotnet
     asdf plugin add golang https://github.com/kennyp/asdf-golang
     asdf plugin add java https://github.com/halcyon/asdf-java
-    asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejsn
+    asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs
+    asdf plugin-add zig https://github.com/asdf-community/asdf-zig
 
     asdf install dotnet 8.0.403
     asdf install golang 1.23.2
     asdf install java temurin-21.0.5+11.0.LTS
     asdf install nodejs 20.18.0
+    asdf install zig 0.13.0
 
     asdf global dotnet 8.0.403
     asdf global golang 1.23.2
     asdf global java temurin-21.0.5+11.0.LTS
     asdf global nodejs 20.18.0
+    asdf global zig 0.13.0
+
+    curl -fsSL https://get.pnpm.io/install.sh | sh -
 }
 
 install_ubuntu() {
@@ -126,6 +131,35 @@ install_ubuntu() {
 
 install_arch() {
     echo "Installing Arch packages..."
+
+    sudo pacman-key --init
+    sudo pacman-key --populate
+    sudo pacman -Sy archlinux-keyring
+    sudo pacman -Su
+
+    sudo pacman -S \
+        autoconf \
+        automake \
+        clang \
+        cmake \
+        curl \
+        ffmpeg \
+        gcc \
+        git \
+        github-cli \
+        gzip \
+        htop \
+        llvm \
+        make \
+        nano \
+        neofetch \
+        nginx \
+        ninja \
+        python \
+        tar \
+        unzip \
+        wget \
+        zsh
 }
 
 main() {
